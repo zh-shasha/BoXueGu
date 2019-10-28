@@ -54,8 +54,7 @@ public class MyInfoView {
                 //判断是否已经登录
                 if (readLoginStatus()){
                     //已登录跳转到个人资料界面
-                    Intent intent=new Intent(mContext,SettingActivity.class);
-                    mContext.startActivityForResult(intent,1);
+
                 }else {
                     //未登录跳转到登录界面
                     Intent intent=new Intent(mContext,LoginActivity.class);
@@ -75,6 +74,20 @@ public class MyInfoView {
                     }
                 }
             }
+        });
+        rl_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (readLoginStatus()){
+                    if (readLoginStatus()){
+                        Intent intent=new Intent(mContext,SettingActivity.class);
+                        mContext.startActivityForResult(intent,1);
+                    }else{
+                        Toast.makeText(mContext,"您还未登录，请先登录",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
         });
     }
     /**
