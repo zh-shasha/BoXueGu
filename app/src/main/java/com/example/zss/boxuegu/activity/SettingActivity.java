@@ -52,6 +52,8 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //跳转到修改密码页面
+                Intent intent=new Intent(SettingActivity.this,ModifyPswActivity.class);
+                startActivity(intent);
             }
         });
         //设置密保点击事件
@@ -59,6 +61,9 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //跳转到设置密保页面
+                Intent intent=new Intent(SettingActivity.this,FindPswActivity.class);
+                intent.putExtra("from","security");
+                startActivity(intent);
             }
         });
         rl_exit_login.setOnClickListener(new View.OnClickListener() {
