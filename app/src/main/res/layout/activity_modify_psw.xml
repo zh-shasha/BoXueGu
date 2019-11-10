@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical"
     tools:context=".activity.ModifyPswActivity">
+    <include layout="@layout/main_title_bar"></include>
 <EditText
     android:id="@+id/et_original_psw"
     android:layout_width="match_parent"

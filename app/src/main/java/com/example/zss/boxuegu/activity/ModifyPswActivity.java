@@ -39,6 +39,7 @@ public class ModifyPswActivity extends AppCompatActivity {
         et_original_psw=(EditText)findViewById(R.id.et_original_psw);
         et_new_psw=(EditText)findViewById(R.id.et_new_psw);
         et_new_psw_again=(EditText)findViewById(R.id.et_new_psw_again);
+        btn_save=(Button)findViewById(R.id.btn_save);
         tv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

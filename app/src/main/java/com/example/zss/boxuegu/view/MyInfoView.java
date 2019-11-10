@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.zss.boxuegu.R;
 import com.example.zss.boxuegu.activity.LoginActivity;
 import com.example.zss.boxuegu.activity.SettingActivity;
+import com.example.zss.boxuegu.activity.UserInfoActivity;
 import com.example.zss.boxuegu.utils.AnalysisUtils;
 
 public class MyInfoView {
@@ -54,6 +55,8 @@ public class MyInfoView {
                 //判断是否已经登录
                 if (readLoginStatus()){
                     //已登录跳转到个人资料界面
+                    Intent intent=new Intent(mContext, UserInfoActivity.class);
+                    mContext.startActivity(intent);
 
                 }else {
                     //未登录跳转到登录界面
