@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<infos>
+    <exercises id="1">
+        <subject>1.Android安装包文件简称APK，其扩展名是()</subject>
+        <a>.exe</a>
+        <b>.txt</b>
+        <c>.apk</c>
+        <d>.app</d>
+        <answer>3</answer>
+    </exercises>
+    <exercises id="2">
+        <subject>2.下列选项中不属于ADT Bundle的是（）</subject>
+        <a>Eclipse</a>
+        <b>.txt</b>
+        <c>.apk</c>
+        <d>.app</d>
+        <answer>3</answer>
+    </exercises>
+    <exercises id="3">
+        <subject>3.应用程序层是一个核心应用程序的集合，主要包括()</subject>
+        <a>.exe</a>
+        <b>.txt</b>
+        <c>.apk</c>
+        <d>.app</d>
+        <answer>3</answer>
+    </exercises>
+    <exercises id="4">
+        <subject>1.Android安装包文件简称APK，其扩展名是()</subject>
+        <a>.exe</a>
+        <b>.txt</b>
+        <c>.apk</c>
+        <d>.app</d>
+        <answer>3</answer>
+    </exercises>
+    <exercises id="5">
+        <subject>1.Android安装包文件简称APK，其扩展名是()</subject>
+        <a>.exe</a>
+        <b>.txt</b>
+        <c>.apk</c>
+        <d>.app</d>
+        <answer>3</answer>
+    </exercises>
+</infos>
