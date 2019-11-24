@@ -46,7 +46,7 @@ public class ExercisesDetailAdapter extends BaseAdapter {
     private ArrayList<String> selectedPosition=new ArrayList<String>();
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         final ViewHolder vh;
         if (convertView==null) {
         vh=new ViewHolder();
@@ -111,30 +111,136 @@ public class ExercisesDetailAdapter extends BaseAdapter {
                     //用户所选项A是错误的
                     vh.iv_a.setImageResource(R.mipmap.ic_launcher);
                     if (bean.answer==2){
-                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_b.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_c.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_d.setImageResource(R.mipmap.ic_launcher);
                     }else if (bean.answer==3){
-                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_b.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_c.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_d.setImageResource(R.mipmap.ic_launcher);
                     }else if (bean.answer==4){
-                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_b.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_c.setImageResource(R.mipmap.ic_launcher);
                         vh.iv_d.setImageResource(R.mipmap.ic_launcher);
                     }
                     break;
+                case 2:
+                    //用户所选项B是错误的
+                    vh.iv_b.setImageResource(R.mipmap.ic_launcher);
+                    if (bean.answer==1){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_c.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_d.setImageResource(R.mipmap.ic_launcher);
+                    }else if (bean.answer==3){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_c.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_d.setImageResource(R.mipmap.ic_launcher);
+                    }else if (bean.answer==4){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_c.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_d.setImageResource(R.mipmap.ic_launcher);
+                    }
+                    break;
+                case 3:
+                    //用户所选项A是错误的
+                    vh.iv_c.setImageResource(R.mipmap.ic_launcher);
+                    if (bean.answer==2){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_b.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_d.setImageResource(R.mipmap.ic_launcher);
+                    }else if (bean.answer==3){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_b.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_d.setImageResource(R.mipmap.ic_launcher);
+                    }else if (bean.answer==4){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_b.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_d.setImageResource(R.mipmap.ic_launcher);
+                    }
+                    break;
+                case 4:
+                    //用户所选项D是错误的
+                    vh.iv_d.setImageResource(R.mipmap.ic_launcher);
+                    if (bean.answer==1){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_b.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_c.setImageResource(R.mipmap.ic_launcher);
+                    }else if (bean.answer==2){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_b.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_c.setImageResource(R.mipmap.ic_launcher);
+                    }else if (bean.answer==3){
+                        vh.iv_a.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_b.setImageResource(R.mipmap.ic_launcher);
+                        vh.iv_c.setImageResource(R.mipmap.ic_launcher);
+                    }
+                    break;
+                    default:
+                        break;
             }
         }
-
-        return null;
+        //当用户点击A选项的点击事件
+        vh.iv_a.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断selectedPosition中是否包含此时点击的position
+                if (selectedPosition.contains(""+position)){
+                   selectedPosition.contains(""+position);
+                }else {
+                    selectedPosition.add(position+"");
+                }
+                onSelectListener.onSelectA(position,vh.iv_a,vh.iv_b,vh.iv_c,vh.iv_d);
+            }
+        });
+        //当用户点击B选项的点击事件
+        vh.iv_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断selectedPosition中是否包含此时点击的position
+                if (selectedPosition.contains(""+position)){
+                    selectedPosition.contains(""+position);
+                }else {
+                    selectedPosition.add(position+"");
+                }
+                onSelectListener.onSelectB(position,vh.iv_a,vh.iv_b,vh.iv_c,vh.iv_d);
+            }
+        });
+        //当用户点击C选项的点击事件
+        vh.iv_c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断selectedPosition中是否包含此时点击的position
+                if (selectedPosition.contains(""+position)){
+                    selectedPosition.contains(""+position);
+                }else {
+                    selectedPosition.add(position+"");
+                }
+                onSelectListener.onSelectC(position,vh.iv_a,vh.iv_b,vh.iv_c,vh.iv_d);
+            }
+        });
+        //当用户点击D选项的点击事件
+        vh.iv_d.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断selectedPosition中是否包含此时点击的position
+                if (selectedPosition.contains(""+position)){
+                    selectedPosition.remove(""+position);
+                }else {
+                    selectedPosition.add(position+"");
+                }
+                onSelectListener.onSelectD(position,vh.iv_a,vh.iv_b,vh.iv_c,vh.iv_d);
+            }
+        });
+        return convertView;
     }
     class ViewHolder{
         public TextView subject,tv_a,tv_b,tv_c,tv_d;
         public ImageView iv_a,iv_b,iv_c,iv_d;
     }
-    public interface OnSelectListener{}
+    public interface OnSelectListener{
+        void onSelectA(int position,ImageView iv_a,ImageView iv_b,ImageView iv_c,ImageView iv_d);
+        void onSelectB(int position,ImageView iv_a,ImageView iv_b,ImageView iv_c,ImageView iv_d);
+        void onSelectC(int position,ImageView iv_a,ImageView iv_b,ImageView iv_c,ImageView iv_d);
+        void onSelectD(int position,ImageView iv_a,ImageView iv_b,ImageView iv_c,ImageView iv_d);
+    }
 }

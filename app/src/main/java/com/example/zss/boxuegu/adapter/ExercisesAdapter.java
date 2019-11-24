@@ -1,6 +1,7 @@
 package com.example.zss.boxuegu.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.zss.boxuegu.R;
+import com.example.zss.boxuegu.activity.ExercisesDetailActivity;
 import com.example.zss.boxuegu.bean.ExercisesBean;
 
+import java.io.InputStream;
 import java.util.List;
 
 public class ExercisesAdapter extends BaseAdapter {
@@ -90,10 +93,17 @@ public class ExercisesAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (bean==null){
+                if (bean==null) {
                     return;
-                //跳转到习题详情页面
                 }
+                //跳转到习题详情页面
+                Intent intent=new Intent(mContext,ExercisesDetailActivity.class);
+                //把章节id传递到习题详情页面
+                intent.putExtra("id",bean.id);
+                //把标题传递到习题详情页面
+                intent.putExtra("title",bean.title);
+                mContext.startActivity(intent);
+
             }
         });
         return convertView;
