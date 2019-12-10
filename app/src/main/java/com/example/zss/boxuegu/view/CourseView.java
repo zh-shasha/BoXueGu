@@ -37,7 +37,7 @@ public class CourseView {
     public static final int MSG_AD_SLID = 002;
     private ViewPagerIndicator vpi;
     private MHandler mHandler;
-    private List<CourseBean>cad1;
+    private List<CourseBean>cadl;
     public CourseView(FragmentActivity context){
         mContext=context;
         //为之后将Layout转化为view时用
@@ -45,9 +45,10 @@ public class CourseView {
     }
     private void createView(){
         mHandler=new MHandler();
+        initView();
         initAdData();
         getCourseData();
-        initView();
+
         new AdAutoSlidThread().start();
     }
     //事件捕获
@@ -118,12 +119,12 @@ public class CourseView {
                     }
                 });
                resetSize();
-               if (cad1!=null){
-                   if (cad1.size()>0){
-                       vpi.setCount(cad1.size());
+               if (cadl!=null){
+                   if (cadl.size()>0){
+                       vpi.setCount(cadl.size());
                        vpi.setCurrentPosition(0);
                    }
-                   ada.setDatas(cad1);
+                   ada.setDatas(cadl);
                }
     }
     //计算控件大小
@@ -144,7 +145,7 @@ public class CourseView {
     }
     //初始化广告中的数据
     private void initAdData() {
-        cad1=new ArrayList<CourseBean>();
+        cadl=new ArrayList<CourseBean>();
         for (int i=0;i<3;i++ ){
             CourseBean bean=new CourseBean();
             bean.id=(i+1);
@@ -161,7 +162,7 @@ public class CourseView {
                     default:
                         break;
             }
-            cad1.add(bean);
+            cadl.add(bean);
         }
     }
     //获取课程信息

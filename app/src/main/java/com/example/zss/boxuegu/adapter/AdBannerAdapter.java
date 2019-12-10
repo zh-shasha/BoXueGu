@@ -18,30 +18,30 @@ import java.util.List;
 
 public class AdBannerAdapter extends FragmentStatePagerAdapter implements View.OnTouchListener {
     private Handler mHandler;
-    private List<CourseBean> cad1;
+    private List<CourseBean> cadl;
     public AdBannerAdapter(FragmentManager fm){
         super(fm);
-        cad1=new ArrayList<CourseBean>();
+        cadl=new ArrayList<CourseBean>();
     }
     public AdBannerAdapter(FragmentManager fm,Handler handler){
         super(fm);
         mHandler=handler;
-        cad1=new ArrayList<CourseBean>();
+        cadl=new ArrayList<CourseBean>();
     }
 
     /**
      * 设置数据更新界面
      * @return
      */
-    public void setDatas(List<CourseBean> cad1){
-        this.cad1=cad1;
+    public void setDatas(List<CourseBean> cadl){
+        this.cadl=cadl;
         notifyDataSetChanged();
     }
     @Override
     public Fragment getItem(int index) {
         Bundle args=new Bundle();
-        if (cad1.size()>0){
-            args.putString("ad",cad1.get(index%cad1.size()).icon);
+        if (cadl.size()>0){
+            args.putString("ad",cadl.get(index % cadl.size()).icon);
         }
         return AdBannerFragment.newInstance(args);
     }
@@ -56,7 +56,7 @@ public class AdBannerAdapter extends FragmentStatePagerAdapter implements View.O
      * @return
      */
     public int getSize(){
-        return cad1==null ? 0:cad1.size();
+        return cadl==null ? 0:cadl.size();
     }
     @Override
     public int getItemPosition(Object object){
