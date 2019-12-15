@@ -1,6 +1,7 @@
 package com.example.zss.boxuegu.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -78,6 +79,10 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
                     db.saveVideoPlayList(videoList.get(position),userName);
                 }
                 //跳转到视频播放界面
+                Intent intent=new Intent(VideoListActivity.this,VideoPlayActivity.class);
+                intent.putExtra("videoPath",videoPath);
+                intent.putExtra("position",position);
+                startActivityForResult(intent,1);
             }
         }
         });
@@ -182,6 +187,22 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
         SharedPreferences sp=getSharedPreferences("loginInfo", Context.MODE_PRIVATE);
         boolean isLogin=sp.getBoolean("isLogin",false);
         return isLogin;
+    }
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if (data !=null){
+            //接收播放界面回传过来的被选中的视频的位置
+            int position=data.getIntExtra("position",0);
+            adapter.setSelectedPosition(position);//设置被选中的位置
+            //视频选项卡被选中时所有图标的颜色值
+            lv_video_list.setVisibility(View.VISIBLE);
+            sv_chapter_intro.setVisibility(View.GONE);
+            tv_intro.setBackgroundColor(Color.parseColor("FFFFFF"));
+            tv_video.setBackgroundColor(Color.parseColor("#30B4FF"));
+            tv_intro.setBackgroundColor(Color.parseColor("000000"));
+            tv_video.setBackgroundColor(Color.parseColor("FFFFFF"));
+        }
     }
 }
 

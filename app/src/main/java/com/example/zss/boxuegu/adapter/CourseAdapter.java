@@ -109,17 +109,9 @@ public class CourseAdapter extends BaseAdapter {
     private void setLeftImg(int id,ImageView iv_left_img){
         switch (id){
             case 1:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
-                break;
             case 3:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
-                break;
             case 5:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
-                break;
             case 7:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
-                break;
             case 9:
                 iv_left_img.setImageResource(R.mipmap.ic_launcher);
                 break;
@@ -128,22 +120,18 @@ public class CourseAdapter extends BaseAdapter {
     /**
      * 设置右边的图片
      */
-    private void setRightImg(int id,ImageView iv_left_img){
+    private void setRightImg(int id,ImageView iv_right_img){
         switch (id){
             case 2:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
-                break;
+                iv_right_img.setImageResource(R.drawable.tu1);
             case 4:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
-                break;
+                iv_right_img.setImageResource(R.drawable.tu1);
             case 6:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
-                break;
+                iv_right_img.setImageResource(R.drawable.tu1);
             case 8:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
-                break;
+                iv_right_img.setImageResource(R.mipmap.ic_launcher);
             case 10:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
+                iv_right_img.setImageResource(R.mipmap.ic_launcher);
                 break;
         }
     }

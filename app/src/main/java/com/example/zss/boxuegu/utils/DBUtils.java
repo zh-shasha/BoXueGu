@@ -9,6 +9,9 @@ import com.example.zss.boxuegu.bean.UserBean;
 import com.example.zss.boxuegu.bean.VideoBean;
 import com.example.zss.boxuegu.sqlite.SQLiteHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBUtils {
     private static  DBUtils instance=null;
     private static SQLiteHelper helper;
@@ -108,5 +111,26 @@ public class DBUtils {
             delSuccess=true;
         }
         return delSuccess;
+    }
+    /**
+     * 获取视频记录信息
+     */
+    public List<VideoBean> getVideoHistory(String userName){
+        String sql="SELECT * FROM "+SQLiteHelper.U_VIDEO_PLAY_LIST+ " WHERE userName=?";
+        Cursor cursor=db.rawQuery(sql,new String[]{userName});
+        List<VideoBean> vbl=new ArrayList<VideoBean>();
+        VideoBean bean=null;
+        while (cursor.moveToNext()){
+            bean=new VideoBean();
+            bean.chapterId=cursor.getInt(cursor.getColumnIndex("chapterId"));
+            bean.videoId=cursor.getInt(cursor.getColumnIndex("videoId"));
+            bean.videoPath=cursor.getString(cursor.getColumnIndex("videoPath"));
+            bean.title=cursor.getString(cursor.getColumnIndex("secondTitle"));
+            bean.secondTitle=cursor.getString(cursor.getColumnIndex("secondTitle"));
+            vbl.add(bean);
+            bean=null;
+        }
+        cursor.close();
+        return vbl;
     }
 }

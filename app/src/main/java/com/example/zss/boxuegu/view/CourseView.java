@@ -15,7 +15,9 @@ import android.widget.ListView;
 import com.example.zss.boxuegu.R;
 import com.example.zss.boxuegu.adapter.AdBannerAdapter;
 import com.example.zss.boxuegu.adapter.CourseAdapter;
+import com.example.zss.boxuegu.adapter.ExercisesAdapter;
 import com.example.zss.boxuegu.bean.CourseBean;
+import com.example.zss.boxuegu.bean.ExercisesBean;
 import com.example.zss.boxuegu.utils.AnalysisUtils;
 
 import java.io.InputStream;
@@ -31,12 +33,12 @@ public class CourseView {
     private FragmentActivity mContext;
     private LayoutInflater mInflater;
     private View mCurrentView;
-    private ViewPager adPager;
-    private View adBannerLay;
-    private AdBannerAdapter ada;
-    public static final int MSG_AD_SLID = 002;
-    private ViewPagerIndicator vpi;
-    private MHandler mHandler;
+    private ViewPager adPager;                //广告
+    private View adBannerLay;                 //广告条容器
+    private AdBannerAdapter ada;              //适配器
+    public static final int MSG_AD_SLID = 002;//广告自动滑动
+    private ViewPagerIndicator vpi;           //小圆点
+    private MHandler mHandler;                //事件捕获
     private List<CourseBean>cadl;
     public CourseView(FragmentActivity context){
         mContext=context;
@@ -45,10 +47,9 @@ public class CourseView {
     }
     private void createView(){
         mHandler=new MHandler();
-        initView();
         initAdData();
         getCourseData();
-
+        initView();
         new AdAutoSlidThread().start();
     }
     //事件捕获
@@ -60,7 +61,7 @@ public class CourseView {
             case MSG_AD_SLID:
                 if (ada.getCount() > 0) {
                     adPager.setCurrentItem(
-                            adPager.getCurrentItem() + 1);
+                    adPager.getCurrentItem()+1);
                 }
                 break;
         }
@@ -86,7 +87,7 @@ public class CourseView {
     //初始化控件
     private void initView() {
         mCurrentView=mInflater.inflate(R.layout.main_view_course,null);
-        lv_list=(ListView)mCurrentView.findViewById(R.id.lv_list);
+        lv_list=(ListView)mCurrentView.findViewById(R.id.lv_list1);
         adapter=new CourseAdapter(mContext);
         adapter.setData(cb1);
         lv_list.setAdapter(adapter);
@@ -104,7 +105,6 @@ public class CourseView {
                     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
                     }
-
                     @Override
                     public void onPageSelected(int position) {
                     if (ada.getSize()>0){

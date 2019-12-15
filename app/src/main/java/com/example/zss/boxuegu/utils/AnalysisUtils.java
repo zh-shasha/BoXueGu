@@ -77,11 +77,11 @@ public class AnalysisUtils {
      * 解析每章的课程视频信息
      */
     public static List<List<CourseBean>> getCourseInfos(InputStream  is) throws
-            Exception{
+    Exception{
         XmlPullParser parser=Xml.newPullParser();
         parser.setInput(is,"utf-8");
         List<List<CourseBean>> courseInfos=null;
-        List<CourseBean>courseList=null;
+        List<CourseBean> courseList=null;
         CourseBean courseInfo=null;
         int count=0;
         int type=parser.getEventType();
@@ -111,7 +111,7 @@ public class AnalysisUtils {
                         count++;
                         courseList.add(courseInfo);
                         if (count%2==0){
-                            //课程界面每两个数据时一组放在List集合
+                            //课程界面每两个数据是一组放在List集合
                             courseInfos.add(courseList);
                             courseList=null;
                             courseList=new ArrayList<CourseBean>();
