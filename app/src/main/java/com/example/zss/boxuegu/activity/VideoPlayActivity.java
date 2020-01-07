@@ -1,7 +1,6 @@
 package com.example.zss.boxuegu.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -11,6 +10,8 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.zss.boxuegu.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class VideoPlayActivity extends AppCompatActivity {
     private VideoView videoView;

@@ -32,10 +32,10 @@ public class ViewPagerIndicator extends LinearLayout {
             ImageView imageView=new ImageView(context);
             if (mIndex==1){ //滑动到当前界面
                 //设置小圆点的图片为蓝色图片
-                imageView.setImageResource(R.mipmap.ic_launcher);
+                imageView.setImageResource(R.mipmap.circle_blue);
             }else {
                 //设置小圆点的图片为灰色
-                imageView.setImageResource(R.drawable.tu1);
+                imageView.setImageResource(R.mipmap.circle_gray);
             }
             imageView.setPadding(pex,0,pex,0);
             addView(imageView);

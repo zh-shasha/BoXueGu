@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,6 +29,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class VideoListActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_intro,tv_video,tv_chapter_intro;
@@ -60,6 +63,7 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
     private void init(){
         tv_intro=(TextView)findViewById(R.id.tv_intro);
         tv_video=(TextView)findViewById(R.id.tv_video);
+        tv_chapter_intro=(TextView)findViewById(R.id.tv_chapter_intro);
         lv_video_list=(ListView)findViewById(R.id.lv_video_list);
         sv_chapter_intro=(ScrollView)findViewById(R.id.sv_chapter_intro);
         adapter=new VideoListAdapter(this, new VideoListAdapter.OnSelectListener() {
@@ -106,14 +110,14 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
              tv_intro.setBackgroundColor(Color.parseColor("#30B4FF"));
              tv_video.setBackgroundColor(Color.parseColor("#FFFFFF"));
              tv_intro.setTextColor(Color.parseColor("#FFFFFF"));
-             tv_video.setTextColor(Color.parseColor("#000000"));
+             tv_video.setTextColor(Color.parseColor("#30B4FF"));
              break;
          case R.id.tv_video:
              lv_video_list.setVisibility(View.VISIBLE);
              sv_chapter_intro.setVisibility(View.GONE);
              tv_intro.setBackgroundColor(Color.parseColor("#FFFFFF"));
              tv_video.setBackgroundColor(Color.parseColor("#30B4FF"));
-             tv_intro.setTextColor(Color.parseColor("#000000"));
+             tv_intro.setTextColor(Color.parseColor("#30B4FF"));
              tv_video.setTextColor(Color.parseColor("#FFFFFF"));
              break;
              default:
@@ -198,10 +202,10 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
             //视频选项卡被选中时所有图标的颜色值
             lv_video_list.setVisibility(View.VISIBLE);
             sv_chapter_intro.setVisibility(View.GONE);
-            tv_intro.setBackgroundColor(Color.parseColor("FFFFFF"));
+            tv_intro.setBackgroundColor(Color.parseColor("#FFFFFF"));
             tv_video.setBackgroundColor(Color.parseColor("#30B4FF"));
-            tv_intro.setBackgroundColor(Color.parseColor("000000"));
-            tv_video.setBackgroundColor(Color.parseColor("FFFFFF"));
+            tv_intro.setBackgroundColor(Color.parseColor("#30B4FF"));
+            tv_video.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
     }
 }

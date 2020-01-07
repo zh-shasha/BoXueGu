@@ -1,7 +1,6 @@
 package com.example.zss.boxuegu.activity;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -16,6 +15,8 @@ import com.example.zss.boxuegu.utils.DBUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PLayHistoryActivity extends AppCompatActivity {
     private TextView tv_main_title,tv_back,tv_none;

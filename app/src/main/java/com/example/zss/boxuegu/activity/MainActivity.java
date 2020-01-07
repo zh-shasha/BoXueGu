@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -21,6 +21,9 @@ import com.example.zss.boxuegu.R;
 import com.example.zss.boxuegu.view.CourseView;
 import com.example.zss.boxuegu.view.ExercisesView;
 import com.example.zss.boxuegu.view.MyInfoView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     /**
@@ -153,9 +156,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_exercises.setTextColor(Color.parseColor("#666666"));
         tv_course.setTextColor(Color.parseColor("#666666"));
         tv_myInfo.setTextColor(Color.parseColor("#666666"));
-        iv_course.setImageResource(R.mipmap.ic_launcher);
-        iv_exercises.setImageResource(R.mipmap.ic_launcher);
-        iv_myInfo.setImageResource(R.mipmap.ic_launcher);
+        iv_course.setImageResource(R.drawable.courese_selector);
+        iv_exercises.setImageResource(R.drawable.exercise_selector);
+        iv_myInfo.setImageResource(R.drawable.my_selector);
         for (int i=0;i<mBottomLayout.getChildCount();i++){
             mBottomLayout.getChildAt(i).setSelected(false);
         }
@@ -167,21 +170,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (index) {
             case 0:
                 mCourseBtn.setSelected(true);
-                iv_course.setImageResource(R.mipmap.ic_launcher);
+                iv_course.setImageResource(R.drawable.courese_selector);
                 tv_course.setTextColor(Color.parseColor("#0097F7"));
                 rl_title_bar.setVisibility(View.VISIBLE);
                 tv_main_title.setText("博学谷课程");
                 break;
             case 1:
                 mExercisesBtn.setSelected(true);
-                iv_exercises.setImageResource(R.mipmap.ic_launcher);
+                iv_exercises.setImageResource(R.drawable.exercise_selector);
                 tv_exercises.setTextColor(Color.parseColor("#0097F7"));
                 rl_title_bar.setVisibility(View.VISIBLE);
                 tv_main_title.setText("博学谷习题");
                 break;
             case 2:
                 mMyInfoBtn.setSelected(true);
-                iv_myInfo.setImageResource(R.mipmap.ic_launcher);
+                iv_myInfo.setImageResource(R.drawable.my_selector);
                 tv_myInfo.setTextColor(Color.parseColor("#0097F7"));
                 rl_title_bar.setVisibility(View.GONE);
 

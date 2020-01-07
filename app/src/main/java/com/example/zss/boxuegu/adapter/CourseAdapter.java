@@ -54,6 +54,7 @@ public class CourseAdapter extends BaseAdapter {
             vh.tv_left_img_title=(TextView)convertView.findViewById(R.id.tv_left_img_title);
             vh.tv_right_img_title=(TextView) convertView.findViewById(R.id.tv_right_img_title);
             vh.tv_right_title=(TextView)convertView.findViewById(R.id.tv_right_title);
+            vh.tv_left_title=(TextView)convertView.findViewById(R.id.tv_left_title);
             convertView.setTag(vh);
         } else {
             //复用convertView
@@ -109,11 +110,19 @@ public class CourseAdapter extends BaseAdapter {
     private void setLeftImg(int id,ImageView iv_left_img){
         switch (id){
             case 1:
+                iv_left_img.setImageResource(R.mipmap.pic1);
+                break;
             case 3:
+                iv_left_img.setImageResource(R.mipmap.pic2);
+                break;
             case 5:
+                iv_left_img.setImageResource(R.mipmap.pic3);
+                break;
             case 7:
+                iv_left_img.setImageResource(R.mipmap.pic1);
+                break;
             case 9:
-                iv_left_img.setImageResource(R.mipmap.ic_launcher);
+                iv_left_img.setImageResource(R.mipmap.pic2);
                 break;
         }
     }
@@ -123,15 +132,15 @@ public class CourseAdapter extends BaseAdapter {
     private void setRightImg(int id,ImageView iv_right_img){
         switch (id){
             case 2:
-                iv_right_img.setImageResource(R.drawable.tu1);
+                iv_right_img.setImageResource(R.mipmap.pic4);
             case 4:
-                iv_right_img.setImageResource(R.drawable.tu1);
+                iv_right_img.setImageResource(R.mipmap.pic5);
             case 6:
-                iv_right_img.setImageResource(R.drawable.tu1);
+                iv_right_img.setImageResource(R.mipmap.pic4);
             case 8:
-                iv_right_img.setImageResource(R.mipmap.ic_launcher);
+                iv_right_img.setImageResource(R.mipmap.pic6);
             case 10:
-                iv_right_img.setImageResource(R.mipmap.ic_launcher);
+                iv_right_img.setImageResource(R.mipmap.pic4);
                 break;
         }
     }

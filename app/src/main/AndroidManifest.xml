@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zss.boxuegu">
-
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +15,7 @@
         <activity android:name=".activity.ChangeUserInfoActivity" />
         <activity android:name=".activity.UserInfoActivity" />
         <activity android:name=".activity.FindPswActivity" />
+        <activity android:name=".activity.VideoListActivity"/>
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

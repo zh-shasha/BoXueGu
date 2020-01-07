@@ -4,9 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.os.TestLooperManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,6 +15,9 @@ import com.example.zss.boxuegu.R;
 import com.example.zss.boxuegu.bean.UserBean;
 import com.example.zss.boxuegu.utils.AnalysisUtils;
 import com.example.zss.boxuegu.utils.DBUtils;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
 private TextView tv_back;

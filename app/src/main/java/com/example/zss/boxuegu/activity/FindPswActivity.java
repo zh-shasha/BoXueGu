@@ -2,7 +2,7 @@ package com.example.zss.boxuegu.activity;
 
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.example.zss.boxuegu.R;
 import com.example.zss.boxuegu.utils.AnalysisUtils;
 import com.example.zss.boxuegu.utils.MD5Utils;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class FindPswActivity extends AppCompatActivity {
 private EditText et_validate_name,et_user_name;

@@ -3,7 +3,7 @@ package com.example.zss.boxuegu.activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zss.boxuegu.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ChangeUserInfoActivity extends AppCompatActivity {
     private TextView tv_main_title,tv_save;

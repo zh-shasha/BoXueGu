@@ -3,8 +3,6 @@ package com.example.zss.boxuegu.view;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -13,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.zss.boxuegu.R;
+import com.example.zss.boxuegu.activity.MainActivity;
 import com.example.zss.boxuegu.adapter.AdBannerAdapter;
 import com.example.zss.boxuegu.adapter.CourseAdapter;
 import com.example.zss.boxuegu.adapter.ExercisesAdapter;
@@ -25,6 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import java.util.logging.LogRecord;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class CourseView {
     private ListView lv_list;
@@ -40,7 +42,7 @@ public class CourseView {
     private ViewPagerIndicator vpi;           //小圆点
     private MHandler mHandler;                //事件捕获
     private List<CourseBean>cadl;
-    public CourseView(FragmentActivity context){
+    public CourseView(MainActivity context){
         mContext=context;
         //为之后将Layout转化为view时用
         mInflater=LayoutInflater.from(mContext);

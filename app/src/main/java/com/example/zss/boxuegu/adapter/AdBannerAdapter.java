@@ -3,9 +3,6 @@ package com.example.zss.boxuegu.adapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -15,6 +12,10 @@ import com.example.zss.boxuegu.view.CourseView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class AdBannerAdapter extends FragmentStatePagerAdapter implements View.OnTouchListener {
     private Handler mHandler;

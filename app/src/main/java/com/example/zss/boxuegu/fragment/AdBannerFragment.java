@@ -2,13 +2,14 @@ package com.example.zss.boxuegu.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.zss.boxuegu.R;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,11 +38,11 @@ public class AdBannerFragment extends Fragment {
         super.onResume();
         if (ab!=null){
             if ("banner_1".equals(ab)){
-                iv.setImageResource(R.mipmap.ic_launcher);
+                iv.setImageResource(R.mipmap.pic1);
             }else if ("banner_2".equals(ab)){
-                iv.setImageResource(R.mipmap.ic_launcher);
+                iv.setImageResource(R.mipmap.pic2);
             }else if ("banner_3".equals(ab)){
-                iv.setImageResource(R.mipmap.ic_launcher);
+                iv.setImageResource(R.mipmap.pic3);
             }
         }
     }

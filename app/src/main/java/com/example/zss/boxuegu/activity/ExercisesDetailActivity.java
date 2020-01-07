@@ -1,7 +1,6 @@
 package com.example.zss.boxuegu.activity;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,6 +16,8 @@ import com.example.zss.boxuegu.utils.AnalysisUtils;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ExercisesDetailActivity extends AppCompatActivity {
     private TextView tv_main_title;

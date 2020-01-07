@@ -69,16 +69,16 @@ public class VideoListAdapter extends BaseAdapter {
              vh=(ViewHolder)convertView.getTag();
          }
          final VideoBean bean=getItem(position);
-         vh.iv_icon.setImageResource(R.mipmap.ic_launcher);
+         vh.iv_icon.setImageResource(R.mipmap.play);
          vh.tv_tilte.setTextColor(Color.parseColor("#333333"));
          if (bean !=null){
              vh.tv_tilte.setText(bean.secondTitle);
              //设置选中效果
              if (selectedPosition==position){
-                 vh.iv_icon.setImageResource(R.mipmap.ic_launcher);
+                 vh.iv_icon.setImageResource(R.mipmap.play);
                  vh.tv_tilte.setTextColor(Color.parseColor("#009958"));
              }else {
-                 vh.iv_icon.setImageResource(R.mipmap.ic_launcher);
+                 vh.iv_icon.setImageResource(R.mipmap.play);
                  vh.tv_tilte.setTextColor(Color.parseColor("#333333"));
              }
          }
